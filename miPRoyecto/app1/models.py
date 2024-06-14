@@ -17,7 +17,7 @@ class Simple(models.Model):
         return self.url
     
 class DataExample(models.Model):
-    the_date=models.DataTimeField()
+    the_date=models.DateTimeField()
 
 class NullExample(models.Model):
     col = models.CharField(max_length=10, blank=True, null=True)
@@ -27,6 +27,6 @@ class Language(models.Model):
 
 class Framework(models.Model):
     name = models.CharField(max_length=10)
-    lenguage = models.ForeignKey(Language, on_delete=models.CASCADE)
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
 
     
