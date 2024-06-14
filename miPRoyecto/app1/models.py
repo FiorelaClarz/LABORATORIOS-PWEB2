@@ -27,6 +27,6 @@ class Language(models.Model):
 
 class Framework(models.Model):
     name = models.CharField(max_length=10)
-
+    lenguage = models.ForeignKey(Language, on_delete=models.CASCADE)
 
     
