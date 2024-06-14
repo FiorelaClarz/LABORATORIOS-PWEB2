@@ -7,10 +7,19 @@ class Persona (models.Model):
     def __str__(self):
         
         return self.nombre
-    
-class Cliente (models.Model):
-    nombreCli = models.CharField(max_length=20)
-    edad = models.IntegerField(null=True, blank=True)
+
+class Simple(models.Models):
+    text = models.CharField(max_length=10)
+    number = models.IntegerField(null=True)
+    url = models.URLField(default='www.example.com')
+
     def __str__(self):
-        
-        return self.nombre
+        return self.url
+    
+class DataExample(models.Model):
+    the_date=models.DataTimeField()
+
+class NullExample(models.Model):
+    col = models.CharField(max_length=10, blank=True, null=True)
+
+    
