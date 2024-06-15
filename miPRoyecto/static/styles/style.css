@@ -1,38 +1,75 @@
-/* style.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #FFE5B4;
+    color: #8B4513; 
     margin: 0;
+    padding: 20px;
+}
+
+
+h1, h2 {
+    color: #D2691E;
+}
+
+ul {
+    list-style-type: none;
     padding: 0;
 }
 
-h1 {
-    color: #007cae;
-    text-align: center;
-    margin-top: 20px;
-}
-
-p {
-    font-size: 16px;
-    text-align: center;
-    margin: 20px 0;
+li {
+    background-color: #FFDAB9;
+    border: 1px solid #D2691E;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007cae;
+    background-color: #FF8C00;
     border: none;
-    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #005f8a;
+    background-color: #FF7F50;
+}
+
+
+form {
+    background-color: #FFDAB9;
+    border: 1px solid #D2691E;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #D2691E;
+    border-radius: 5px;
+}
+
+#emailResponse {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #D2691E;
+    border-radius: 5px;
+    background-color: #FFE4B5;
 }
