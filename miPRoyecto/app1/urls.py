@@ -16,9 +16,15 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
-from .import views
+
+# from django.contrib import admin
+from . import views
+
+# from .views import GeneratePDF
+# from miPRoyecto.app1 import views
 
 urlpatterns = [
     # salida, def, nombre 
-    path('', views.home, name='home'),
+    path('', views.pagina_principal, name='pagina_principal'),
+    path('pdf/',views.render_pdf_view, name='render_pdf'),
 ]
