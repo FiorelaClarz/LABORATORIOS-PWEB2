@@ -24,5 +24,4 @@ urlpatterns = [
     path('pdf/', views.generate_pdf, name='generate_pdf'),
     path('send-email/', views.enviar_email, name='send_email'), 
 ]
-    # path('pdf/',views.render_pdf_view, name='render_pdf'),
-    # path('', views.pagina_principal, name='pagina_principal'),
+   

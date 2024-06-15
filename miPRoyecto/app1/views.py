@@ -1,3 +1,4 @@
+from email.message import EmailMessage
 from django.shortcuts import render
 from django.http import HttpResponse
 from xhtml2pdf import pisa
@@ -54,7 +55,7 @@ def enviar_email(request):
         try:
             data = json.loads(request.body)
             recipient_email = data.get('email')
-            message = data.get('message', 'No hay mensaje')  # Mensaje por defecto si no se proporciona
+            message = data.get('message', 'No hay mensaje')  
 
             subject = "asunto"
             email_from = "tucorreo@gmail.com"
@@ -105,34 +106,3 @@ def generate_pdf(request):
 
     buffer.seek(0)
     return HttpResponse(buffer, content_type='application/pdf')
-
-
-# def enviar_email(request):
-#     if request.method == "POST":
-#         try:
-#             data = json.loads(request.body)
-#             recipient_email = data.get('email')
-#             message = data.get('message', 'No hay mensaje')  # Mensaje por defecto si no se proporciona
-
-#             subject = "asunto"
-#             email_from = "tucorreo@gmail.com"
-#             recipient_list = [recipient_email]
-
-#             send_mail(subject, message, email_from, recipient_list)
-#             return JsonResponse({"message": "Correo enviado"})
-#         except Exception as e:
-#             return JsonResponse({"error": str(e)}, status=500)
-#     return JsonResponse({"error": "Método no permitido"}, status=405)
-
-# def enviar_email(request):
-#     if request.method == "POST":
-#         subject = "Asunto"  
-#         message = "Cuerpo del mensaje" 
-#         email_from = "tucorreo@gmail.com"
-#         recipient_list = ["destinatario@example.com"]
-#         try:
-#             send_mail(subject, message, email_from, recipient_list)
-#             return JsonResponse({"message": "Correo enviado"})
-#         except Exception as e:
-#             return JsonResponse({"error": str(e)}, status=500)
-#     return JsonResponse({"error": "Método no permitido"}, status=405)
