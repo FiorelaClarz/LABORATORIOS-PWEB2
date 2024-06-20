@@ -1,0 +1,65 @@
+<!-- <p>question works!</p> -->
+<div class="quiz-container">
+    <h1>Juego de Preguntas de Ciencia</h1>
+    
+    <!-- Mostrar las preguntas y opciones -->
+    <div *ngFor="let question of questions; let i = index" class="question-block">
+      <h2>{{ question.question }}</h2>
+      
+      <ul class="options-list">
+        <li *ngFor="let option of question.options; let j = index">
+          <input type="radio" name="option{{i}}" [id]="'option' + i + '-' + j" [value]="option" (change)="selectOption(i, option)">
+          <label [for]="'option' + i + '-' + j">{{ option }}</label>
+        </li>
+      </ul>
+      
+      <!-- Mostrar retroalimentación -->
+      <div *ngIf="selectedAnswers[i] !== undefined">
+        <p [ngClass]="{ 'correct': isCorrectAnswer(i), 'incorrect': !isCorrectAnswer(i) }">
+          {{ isCorrectAnswer(i) ? '¡Correcto!' : 'Incorrecto, la respuesta correcta es: ' + question.correctAnswer }}
+        </p>
+      </div>
+    </div>
+    
+    <!-- Botón para mostrar puntuación -->
+    <button (click)="showScore()">Mostrar Puntuación</button>
+  
+    <!-- Mostrar la puntuación final -->
+    <div *ngIf="score !== null">
+      <h3>Tu puntuación es: {{ score }} de {{ questions.length }}</h3>
+    </div>
+  </div>
+  
+  <!-- Estilos básicos -->
+  <style>
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .question-block {
+      margin-bottom: 20px;
+    }
+  
+    .options-list {
+      list-style-type: none;
+      padding: 0;
+    }
+  
+    .options-list li {
+      margin-bottom: 10px;
+    }
+  
+    .correct {
+      color: green;
+    }
+  
+    .incorrect {
+      color: red;
+    }
+  </style>
+  
