@@ -1,0 +1,12 @@
+/* src/app/app.component.css */
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  

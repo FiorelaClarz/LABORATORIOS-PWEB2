@@ -1,9 +1,24 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+// src/app/app.config.ts
 
-import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { ApplicationConfig } from "@angular/core";
+import { provideRouter } from "@angular/router";
+import { HomeComponent } from "./home/home.component";
+
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:3000/api',
+  // Otras configuraciones
+
+};
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]
+  providers: [
+    provideRouter([
+      // { path: 'question', component: QuestionComponent },
+      { path: 'home', component: HomeComponent },
+      // { path: 'results', component: ResultsComponent },
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+    ]),
+    // otros proveedores
+  ],
 };
