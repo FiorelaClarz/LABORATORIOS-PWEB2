@@ -1,0 +1,38 @@
+.ahorcado-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .palabra {
+    font-size: 2em;
+    margin: 20px;
+  }
+  
+  .intentos {
+    font-size: 1.2em;
+    margin: 10px;
+  }
+  
+  .letras-incorrectas {
+    color: red;
+    margin: 10px;
+  }
+  
+  .input-letra {
+    margin: 20px;
+  }
+  
+  .input-letra input {
+    font-size: 1em;
+    padding: 5px;
+  }
+  
+  .input-letra button {
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+  
+  .resultado {
+    margin: 20px;
+    font-size: 1.5em;
+  }
